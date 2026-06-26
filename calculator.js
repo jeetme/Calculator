@@ -2,9 +2,10 @@ const inputBtn = document.querySelectorAll('.input-btn')
 const displayBox = document.querySelector('.display-box')
 
 inputBtn.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', event => {
         event.preventDefault()
         append(button.dataset.value)
+        button.blur()
     })
 })
 
@@ -27,6 +28,11 @@ document.addEventListener('keydown', event => {
         return
     }
 
+    if("1234567890+-/*().".includes(event.key)) {
+        event.preventDefault()
+        append(event.key)
+    }
+
     if(document.activeElement !== displayBox) {
         displayBox.focus()
         const len = displayBox.value.length
@@ -35,12 +41,18 @@ document.addEventListener('keydown', event => {
 })
 
 function append(input) {
-    if(!isNaN(displayBox.value.at(-1)) && input === "(") {
-        displayBox.value += '*'
-    }
     if(displayBox.value === 'Error') {
         displayBox.value = ''
     }
+
+    const lastChar = displayBox.value.at(-1)
+    if(lastChar === ")" && (input === "(" ||  !isNaN(input))) {
+        displayBox.value += '*'
+    }
+    if(!isNaN(displayBox.value.at(-1)) && input === "(") {
+        displayBox.value += '*'
+    }
+    
     displayBox.value += input
 }
 

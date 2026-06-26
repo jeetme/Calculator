@@ -15,7 +15,7 @@
     <div class="body">
         <input class="display-box" placeholder="0"> <br>
 
-        <button class="clear" onclick="clearAll()">AC</button>
+        <button class="clear" onclick="clearAll(); this.blur()">AC</button>
         <button class="input-btn operator" data-value="(">(</button>
         <button class="input-btn operator" data-value=")">)</button>
         <button class="input-btn operator" data-value="/">/</button> <br>
@@ -33,7 +33,7 @@
         <button class="input-btn operator" data-value="+">+</button> <br>
         <button class="input-btn" data-value="0">0</button>
         <button class="input-btn" data-value=".">.</button>
-        <button class="equal" onclick="calculate()">=</button>
+        <button class="equal" onclick="calculate(); this.blur()">=</button>
         <button class="input-btn operator" data-value="**">**</button>
     </div>
 
