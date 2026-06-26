@@ -1,0 +1,79 @@
+button {
+    width: 50px;
+    height: 30px;
+    margin-left: 2px;
+    margin-right: 2px;;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgb(241, 241, 255);
+    transition: background-color 0.15s ease, 
+                border-radius 0.15s ease,
+                opacity 0.15s ease;
+}
+
+.operator {
+    background-color: rgb(205, 205, 255);
+}
+
+.operator:hover {
+    background-color: rgb(165, 165, 253);
+}
+
+.clear {
+    background-color: rgb(145, 145, 250);
+}
+
+.clear:hover {
+    background-color: rgb(117, 117, 214);
+}
+
+.equal {
+    background-color: rgb(181, 101, 255);
+}
+.equal:hover {
+    background-color: rgb(145, 74, 211);
+}
+
+.body {
+    border-color:rgb(220, 220, 255) ;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    width: 228px;
+    height: 235px;
+
+}
+
+button:hover {
+    background-color: lavender;
+    border-radius: 8px;
+}
+
+button:active {
+    opacity: .7;
+}
+
+.display-box {
+    width: 94%;
+    height: 40px;
+    margin-left: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    text-align: right;
+    font-size: 45px;
+    font-family: "Varela Round", sans-serif;
+
+}
+
+.display-box:focus {
+  outline: none;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+  background-color: #ffffff;
+}
