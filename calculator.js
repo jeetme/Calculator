@@ -45,7 +45,15 @@ function append(input) {
         displayBox.value = ''
     }
 
-    displayBox.value += input
+    const start = displayBox.selectionStart
+    const end = displayBox.selectionEnd
+    const value = displayBox.value
+
+    displayBox.value = value.slice(0, start) + input + value.slice(end)
+
+    const newPos = start + input.length
+    displayBox.setSelectionRange(newPos, newPos)
+    displayBox.focus()
 }
 
 function clearAll() {
@@ -57,7 +65,7 @@ function calculate() {
         if (displayBox.value === '') {
             return
         }
-        const finalExp = displayBox.value.replace(/(\d)\(/g, '$1*(').replace(/\)\(/g, ')*(')
+        const finalExp = displayBox.value.replace(/(?<=[0-9)])[(]/g, '*(')
         displayBox.value = eval(finalExp)
     } catch (error) {
         displayBox.value = 'Error'
