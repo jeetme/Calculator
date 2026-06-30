@@ -62,7 +62,8 @@ function clearAll() {
 
 function calculate() {
     try {
-        if (displayBox.value === '') {
+        if (displayBox.value === '' || displayBox.value === 'Error') {
+            displayBox.value = ''
             return
         }
         const finalExp = displayBox.value.replace(/(?<=[0-9)])[(]/g, '*(')
